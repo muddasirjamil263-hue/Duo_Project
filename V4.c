@@ -40,11 +40,21 @@ int main(void)
 
 void update_parcel(char tracking_code[10], char status)
 {
-    printf("Enter parcel ID: ");
-    scanf("%d", &tracking_code[10]);
+    char temp_input[10];
+    do
+    {
+        printf("Enter parcel ID: ");
+        scanf(" %10c", &temp_input[10]);
+        if (temp_input == track_parcel)
+        printf("Valid code.");
+        else
+        printf("Invalid code. Try again.");
+    } 
+    while (temp_input != tracking_code);
     printf("Current status: %c\n", status);
     printf("Enter the new status: ");
-    scanf("%c", &status);
+    scanf(" %c", &status);
+    printf("New status is now: %c\n", status);
 }
 
 
@@ -54,11 +64,11 @@ void update_parcel(char tracking_code[10], char status)
 void input_parcel(char tracking_code[10], char status, char sender, int weight, char destination, double charge)
 {
     printf("Parcel ID          : ");
-    scanf("%d", &tracking_code[10]);
+    scanf(" %10c", &tracking_code[10]);
     printf("Sender name        : ");
-    scanf("%c", &sender);
+    scanf(" %c", &sender);
     printf("Destination district      : ");
-    scanf("%c", &destination);
+    scanf(" %c", &destination);
 
 
     printf("Enter package weight in grams: ");
@@ -69,8 +79,17 @@ void input_parcel(char tracking_code[10], char status, char sender, int weight, 
 
 void track_parcel(char tracking_code[10], char status, char sender, int weight, char destination)
 {
-    printf("Enter parcel ID: ");
-    scanf("%d", &tracking_code[10]);
+    char temp_input[10];
+    do
+    {
+        printf("Enter parcel ID: ");
+        scanf(" %10c", &temp_input[10]);
+        if (temp_input == track_parcel)
+        printf("Valid code.");
+        else
+        printf("Invalid code. Try again.");
+    } 
+    while (temp_input != tracking_code);
     
     printf("Parcel ID: %c\n", tracking_code[10]);
     printf("Sender: %c\n", sender);

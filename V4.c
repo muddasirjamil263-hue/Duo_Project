@@ -45,7 +45,7 @@ void update_parcel(char tracking_code[10], char status)
     {
         printf("Enter parcel ID: ");
         scanf(" %10c", &temp_input[10]);
-        if (temp_input == track_parcel)
+        if (temp_input == tracking_code)
         printf("Valid code.");
         else
         printf("Invalid code. Try again.");
@@ -84,7 +84,7 @@ void track_parcel(char tracking_code[10], char status, char sender, int weight, 
     {
         printf("Enter parcel ID: ");
         scanf(" %10c", &temp_input[10]);
-        if (temp_input == track_parcel)
+        if (temp_input[10] == tracking_code[10])
         printf("Valid code.");
         else
         printf("Invalid code. Try again.");
